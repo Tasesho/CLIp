@@ -1,72 +1,71 @@
-# CLIp Assistant
+# Contributing to CLIp Assistant
 
-Esta sera la guia y Roadmap que seguira este proyecto. Sientanse libres de subir *issues* y *Pull Requests*. Ademas todo lo que se cambie sera escrito en ingles desde el codigo hasta la documentacion, eso incluye este archivo CONTRIBUTION.md, README.md y CHANGELOG.md. 
+Thank you for your interest in contributing! This guide will help you set up your environment and understand our workflow.
 
-Este proyecto nacio basado en C++, Entonces, por que migrar a Rust si funciona en C++ y es estable?
-> Rust es un lenguaje que tiene como **utilidad** principal el manejo **SEGURO** de la memoria sin sacrificar el rendimiento. Ademas Rust posee un gestor de paquetes mas centralizado con **Cargo** y **rustup**, evitando usar herramientas externas al lenguajue como CMake o relacionados.
+## Why Rust?
+This project is a migration from an original C++ version. We chose Rust for:
+* **Memory Safety:** Secure memory management without performance loss.
+* **Modern Tooling:** A centralized package manager with **Cargo** and **rustup**, replacing external tools like CMake.
 
+## Our Goals
+* Refactor the legacy C++ logic into idiomatic Rust.
+* Ensure true **Cross-Platform** support (Windows, Linux, macOS).
+* Provide a consistent environment using **Docker**.
 
-***lo que se busca con las contribuciones es:***
+---
 
-- Refactorizar todo a Rust.
-- Portear para Cross-Platform (funcione igual en windows, linux o mac).
-- Estructura para Contenedores (Docker).
-- Usar el compilador de Rust y Cargo para la gestion de librerias.
-
-
-### ROADMAP
-
-- ***Phase 1: Bases y Entorno:***
-
-[ ] Saludo: Reimplementar el comando Hello y el sistema de bienvenida aleatoria.
-
-[ ] Command Parser: Crear un motor simple que reciba texto del usuario y decida qué función ejecutar (usando el match de Rust).
-
-[ ] Fecha y Hora: Implementar ShowHour usando el crate chrono para manejar zonas horarias de forma multiplataforma.
-
-
-### Como contribuir
-
-- Clona el repositorio 
-> ```git clone https://github.com/Tasesho/clip_cloudshare```
-
-- Crear una nueva Branch, antes de hacer cualquier cambio asegurate de **NO** trabajar en ```main```
->  ```git checkout -b cambio/nombre-del-cambio```
-
-- Haz tus cambios
-
-- Commit & Push, guarda tus cambios con mensajes descriptivos en **INGLES**, Ademas usar prefijos (Add, Fix, Docs)
-
-> ```git add .```
-
-> ```git commit -m "Add: new command GiveAdvice"```
-
-> ```git push origin cambio/nombre-del-cambio```
-
-
-- Abrir un Pull Request (PR), ve a la pagina del repositorio en github y veras un boton verde que dice "Compare & pull request". Describe que cambiaste y espera a que el owner apruebe o rechaze tus cambios.
-
-## GUIDELINES
-
-- English only: All code comments, commit messages, and documentation must be in English.
-
-- Keep it simple: Since we are learning, try to write clean and readable code.
-
-- Ask for help: If the Borrow Checker is giving you a hard time, open an Issue or ask in our communication channel.
-
-
-##  Running with Docker
-
-To ensure everyone has the same development environment, we use **Docker**. This avoids the "it works on my machine" problem.
+## 1. Environment Setup (Docker)
+To ensure everyone uses the same development environment and avoid "it works on my machine" issues, we use Docker.
 
 ### Prerequisites
 - Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Windows/Mac) or Docker Engine (Linux).
 
-### How to use it
-1. **Build the container:** This will download the Rust image and compile the project inside a virtual environment.
+### Usage
+1. **Build the container:** Downloads the Rust image and compiles the environment.
    > `docker-compose build`
-
-2. **Run the Assistant:** This command starts CLIp in interactive mode so you can type commands.
+2. **Run CLIp:** Starts the assistant in interactive mode.
    > `docker-compose run app`
 
-*Note: We use `docker-compose` to handle the terminal interaction (TTY) and keep the container open for your input.*
+
+---
+
+---
+
+## 2. How to Contribute
+
+### Step 1: Clone and Branch
+Clone the repository and create a new branch. **Do not work directly on main**.
+- git clone https://github.com/Tasesho/clip_cloudshare
+- git checkout -b branch-name/your-feature-name
+
+### Step 2: Commit Standards
+We follow a simplified version of Conventional Commits. All commit messages must be in English and use one of the following prefixes:
+
+| Prefix | Description |
+| :--- | :--- |
+| **Feat** | A new functionality (e.g., Feat: add random greeting) |
+| **Fix** | A bug fix |
+| **Docs** | Changes to documentation only |
+| **Refactor** | Code changes that neither fix a bug nor add a feature |
+| **Chore** | Updates to build tasks, Docker, or Git configs |
+| **Build** | Changes to Cargo.toml or external dependencies |
+
+---
+
+## 3. Project Roadmap (Phase 1)
+
+The following features are planned for our first release:
+
+- [ ] **Greeting:** Reimplement "Hello" and the random greeting system.
+- [ ] **Command Parser:** Create the core engine to handle user input using Rust's `match`.
+- [ ] **Time/Date:** Implement `ShowHour` using the `chrono` crate.
+
+---
+
+## Guidelines
+
+To ensure code quality and consistency, please follow these guidelines:
+
+* **English Only:** All code comments, commits, and docs must be in English.
+* **Keep it Simple:** Write clean, readable code.
+* **Ask for Help:** If the **Borrow Checker** is giving you a hard time, open an Issue or ask in our communication channel.
