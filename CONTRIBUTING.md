@@ -26,17 +26,18 @@ To ensure everyone uses the same development environment and avoid "it works on 
 2. **Run CLIp:** Starts the assistant in interactive mode.
    > `docker-compose run app`
 
-
----
-
 ---
 
 ## 2. How to Contribute
 
 ### Step 1: Clone and Branch
 Clone the repository and create a new branch. **Do not work directly on main**.
-- git clone https://github.com/Tasesho/clip_cloudshare
-- git checkout -b branch-name/your-feature-name
+```
+git clone https://github.com/Tasesho/clip_cloudshare
+```
+```
+git checkout -b branch-name/your-feature-name
+```
 
 ### Step 2: Commit Standards
 We follow a simplified version of Conventional Commits. All commit messages must be in English and use one of the following prefixes:
