@@ -1,0 +1,7 @@
+services:
+  app:
+    build: .
+    container_name: CLIp
+    # Esto permite que el contenedor sea interactivo (necesario para el input del usuario)
+    stdin_open: true
+    tty: true
