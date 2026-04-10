@@ -1,0 +1,13 @@
+# Rust build artifacts
+/target/
+
+# Assets & Secrets
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Added by cargo
+
+/target
